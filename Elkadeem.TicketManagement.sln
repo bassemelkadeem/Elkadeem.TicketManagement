@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33723.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{AC911FDB-54B0-4BD6-9F95-D3AA8FD4F7B7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{47ECD46F-3817-4E0D-BBD7-8D6E16D0985A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{4A03AECC-C8BC-4638-8056-5FE4F00E5F7D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{E64E8F36-2793-4201-9CFD-F6EC881B4968}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{831BAAF5-3822-4294-ADC8-7A07D9291211}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{31B68F03-B408-4663-9C5F-7F5D5300CD6D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elkadeem.TicketManagement.Domain", "src\Core\Elkadeem.TicketManagement.Domain\Elkadeem.TicketManagement.Domain.csproj", "{18977568-9381-439E-B858-B519D3A437AC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elkadeem.TicketManagement.Application", "src\Core\Elkadeem.TicketManagement.Application\Elkadeem.TicketManagement.Application.csproj", "{E3CD80EE-F3CB-42B2-8DC6-D421658D2753}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{18977568-9381-439E-B858-B519D3A437AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18977568-9381-439E-B858-B519D3A437AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18977568-9381-439E-B858-B519D3A437AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18977568-9381-439E-B858-B519D3A437AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3CD80EE-F3CB-42B2-8DC6-D421658D2753}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3CD80EE-F3CB-42B2-8DC6-D421658D2753}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3CD80EE-F3CB-42B2-8DC6-D421658D2753}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3CD80EE-F3CB-42B2-8DC6-D421658D2753}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4A03AECC-C8BC-4638-8056-5FE4F00E5F7D} = {AC911FDB-54B0-4BD6-9F95-D3AA8FD4F7B7}
+		{E64E8F36-2793-4201-9CFD-F6EC881B4968} = {AC911FDB-54B0-4BD6-9F95-D3AA8FD4F7B7}
+		{831BAAF5-3822-4294-ADC8-7A07D9291211} = {AC911FDB-54B0-4BD6-9F95-D3AA8FD4F7B7}
+		{31B68F03-B408-4663-9C5F-7F5D5300CD6D} = {AC911FDB-54B0-4BD6-9F95-D3AA8FD4F7B7}
+		{18977568-9381-439E-B858-B519D3A437AC} = {4A03AECC-C8BC-4638-8056-5FE4F00E5F7D}
+		{E3CD80EE-F3CB-42B2-8DC6-D421658D2753} = {4A03AECC-C8BC-4638-8056-5FE4F00E5F7D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2A9EF054-D8A3-4F1E-875F-D79A649466B4}
+	EndGlobalSection
+EndGlobal
