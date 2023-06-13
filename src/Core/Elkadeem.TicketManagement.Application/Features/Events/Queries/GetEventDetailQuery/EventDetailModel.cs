@@ -18,6 +18,6 @@
 
         public Guid CategoryId { get; set; }
 
-        public CategoryDto Category { get; set; }
+        public CategoryItemModel Category { get; set; } = default!;
     }
 }

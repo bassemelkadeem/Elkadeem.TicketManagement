@@ -1,0 +1,28 @@
+﻿using MediatR;
+
+namespace Elkadeem.TicketManagement.Application.Features.Events.Commands.UpdateEvent
+{
+    public class UpdateEventCommand : IRequest
+    {
+        public Guid Id { get; set; }
+
+        public string Name { get; set; } = string.Empty;
+
+        public decimal Price { get; set; }
+
+        public string? ImageUrl { get; set; }
+
+        public string? Description { get; set; }
+
+        public DateTime Date { get; set; }
+
+        public Guid CategoryId { get; set; }
+
+        public string? Artist { get; set; }
+
+        public override string ToString()
+        {
+            return $"Event Name is {Name}, Price is {Price} and event date {Date.ToShortDateString()} with description {Description}";
+        }
+    }
+}
