@@ -6,7 +6,7 @@
 
         IReadOnlyList<T> GetAll();
 
-        T Add(T entity);
+        void Add(T entity);
 
         void Update(T entity);
 
@@ -16,10 +16,6 @@
 
         Task<IReadOnlyList<T>> GetAllAsync();
 
-        Task<T> AddAsync(T entity);
-
-        Task UpdateAsync(T entity);
-
-        Task DeleteAsync(T entity);
+        Task AddAsync(T entity);
     }
 }

@@ -15,9 +15,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{831BAAF5-3822-
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{31B68F03-B408-4663-9C5F-7F5D5300CD6D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elkadeem.TicketManagement.Domain", "src\Core\Elkadeem.TicketManagement.Domain\Elkadeem.TicketManagement.Domain.csproj", "{18977568-9381-439E-B858-B519D3A437AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Elkadeem.TicketManagement.Domain", "src\Core\Elkadeem.TicketManagement.Domain\Elkadeem.TicketManagement.Domain.csproj", "{18977568-9381-439E-B858-B519D3A437AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elkadeem.TicketManagement.Application", "src\Core\Elkadeem.TicketManagement.Application\Elkadeem.TicketManagement.Application.csproj", "{E3CD80EE-F3CB-42B2-8DC6-D421658D2753}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Elkadeem.TicketManagement.Application", "src\Core\Elkadeem.TicketManagement.Application\Elkadeem.TicketManagement.Application.csproj", "{E3CD80EE-F3CB-42B2-8DC6-D421658D2753}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elkadeem.TicketManagement.Persistence", "src\Infrastructure\Elkadeem.TicketManagement.Persistence\Elkadeem.TicketManagement.Persistence.csproj", "{B7AA7841-6BA9-4FEC-AA0C-1AA4160DEC39}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{E3CD80EE-F3CB-42B2-8DC6-D421658D2753}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E3CD80EE-F3CB-42B2-8DC6-D421658D2753}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E3CD80EE-F3CB-42B2-8DC6-D421658D2753}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7AA7841-6BA9-4FEC-AA0C-1AA4160DEC39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7AA7841-6BA9-4FEC-AA0C-1AA4160DEC39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7AA7841-6BA9-4FEC-AA0C-1AA4160DEC39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7AA7841-6BA9-4FEC-AA0C-1AA4160DEC39}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -44,6 +50,7 @@ Global
 		{31B68F03-B408-4663-9C5F-7F5D5300CD6D} = {AC911FDB-54B0-4BD6-9F95-D3AA8FD4F7B7}
 		{18977568-9381-439E-B858-B519D3A437AC} = {4A03AECC-C8BC-4638-8056-5FE4F00E5F7D}
 		{E3CD80EE-F3CB-42B2-8DC6-D421658D2753} = {4A03AECC-C8BC-4638-8056-5FE4F00E5F7D}
+		{B7AA7841-6BA9-4FEC-AA0C-1AA4160DEC39} = {E64E8F36-2793-4201-9CFD-F6EC881B4968}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2A9EF054-D8A3-4F1E-875F-D79A649466B4}
