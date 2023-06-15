@@ -20,11 +20,31 @@ namespace Elkadeem.TicketManagement.API
                 setup.AddPolicy("Open", builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
             });
 
+            builder.Services.AddSwaggerGen(options =>
+            {
+                options.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+                {
+                    Version = "1.0",
+                    Title = "Elkadeem Ticket Management API"
+                });
+
+                //options.OperationFilter<FileResultContentTypeOperationFilter>();
+            });
+
             return builder.Build();
         }
 
         public static WebApplication ConfigurePipeline(this WebApplication app)
         {
+            if (app.Environment.IsDevelopment())
+            {
+                app.UseSwagger();
+                app.UseSwaggerUI(options =>
+                {
+                    options.SwaggerEndpoint("/swagger/v1/swagger.json", "Elkadeem Ticket Management API");
+                });
+            }
+
             app.UseHttpsRedirection();
             app.UseCors("Open");
             app.MapControllers();
