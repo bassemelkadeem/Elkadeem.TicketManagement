@@ -19,6 +19,7 @@ namespace Elkadeem.TicketManagement.Application.Profiles
             CreateMap<Category, CategoryItemWithEventsModel>();
             CreateMap<Category, CategoryDetailsItemModel>();
             CreateMap<Category, CreateCategoryCommand>();
+            CreateMap<Category, CreatedCategoryDto>();
 
             // Events
             CreateMap<Event, EventItemModel>();
