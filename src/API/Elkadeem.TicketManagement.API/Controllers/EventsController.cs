@@ -4,7 +4,6 @@ using Elkadeem.TicketManagement.Application.Features.Events.Commands.UpdateEvent
 using Elkadeem.TicketManagement.Application.Features.Events.Queries.GetEventDetailQuery;
 using Elkadeem.TicketManagement.Application.Features.Events.Queries.GetEventsListQuery;
 using MediatR;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Elkadeem.TicketManagement.API.Controllers
