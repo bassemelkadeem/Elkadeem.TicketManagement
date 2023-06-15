@@ -38,6 +38,7 @@ namespace Elkadeem.TicketManagement.API.Controllers
 
         [HttpPost("addnewcategory", Name = "CreateNewCategory")]
         [ProducesDefaultResponseType]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<ActionResult<CreateCategoryCommandResponse>> CreateNewCategory([FromBody]CreateCategoryCommand createCategoryCommand)
         {
             var response = await _mediator.Send(createCategoryCommand);

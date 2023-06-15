@@ -1,6 +1,6 @@
 ﻿namespace Elkadeem.TicketManagement.Application.Features.Events.Queries.GetEventDetailQuery
 {
-    public class CategoryItemModel
+    public class CategoryItemDto
     {
         public Guid Id { get; set; }
 
