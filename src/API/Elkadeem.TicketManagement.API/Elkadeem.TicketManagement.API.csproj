@@ -6,4 +6,17 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.7">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\Elkadeem.TicketManagement.Application\Elkadeem.TicketManagement.Application.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\Elkadeem.TicketManagement.Infrastructure\Elkadeem.TicketManagement.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\Elkadeem.TicketManagement.Persistence\Elkadeem.TicketManagement.Persistence.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Elkadeem.TicketManagement.Persistence.Repository
 {
-    public abstract class BaseRepository<T> : IRepository<T> where T : class
+    public class BaseRepository<T> : IRepository<T> where T : class
     {
         protected readonly IDatabaseContext _databaseContext;
 

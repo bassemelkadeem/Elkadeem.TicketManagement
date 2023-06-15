@@ -17,5 +17,9 @@ namespace Elkadeem.TicketManagement.Persistence.Shared
         Task<int> SaveAsync(CancellationToken cancellationToken = new CancellationToken());
 
         int Save();
+
+        Task EnsureDeleteAsync();
+
+        Task MigrateAsync();
     }
 }

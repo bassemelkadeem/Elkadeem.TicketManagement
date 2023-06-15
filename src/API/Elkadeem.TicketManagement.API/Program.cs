@@ -1,6 +1,8 @@
+using Elkadeem.TicketManagement.API;
+
 var builder = WebApplication.CreateBuilder(args);
-var app = builder.Build();
+var app = builder.ConfigureServices();
 
-app.MapGet("/", () => "Hello World!");
-
+app.ConfigurePipeline();
+await app.ResetDatabaseAsync();
 app.Run();

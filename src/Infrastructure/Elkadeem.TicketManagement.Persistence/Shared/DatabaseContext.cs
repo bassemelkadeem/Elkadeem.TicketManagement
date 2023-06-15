@@ -3,6 +3,7 @@ using Elkadeem.TicketManagement.Domain.Events;
 using Elkadeem.TicketManagement.Domain.Orders;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 
 namespace Elkadeem.TicketManagement.Persistence.Shared
 {
@@ -20,6 +21,16 @@ namespace Elkadeem.TicketManagement.Persistence.Shared
         public DbSet<Category> Categories { get; set; } = default!;
 
         public DbSet<Order> Orders { get; set; } = default!;
+
+        public async Task EnsureDeleteAsync()
+        {
+            await Database.EnsureDeletedAsync();
+        }
+
+        public async Task MigrateAsync()
+        {
+            await Database.MigrateAsync();
+        }
 
         public int Save()
         {
