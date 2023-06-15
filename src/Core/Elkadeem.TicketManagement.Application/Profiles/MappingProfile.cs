@@ -6,6 +6,7 @@ using Elkadeem.TicketManagement.Application.Features.Categories.Queries.GetCateg
 using Elkadeem.TicketManagement.Application.Features.Events.Commands.CreateEvent;
 using Elkadeem.TicketManagement.Application.Features.Events.Commands.UpdateEvent;
 using Elkadeem.TicketManagement.Application.Features.Events.Queries.GetEventDetailQuery;
+using Elkadeem.TicketManagement.Application.Features.Events.Queries.GetEventsExportQuery;
 using Elkadeem.TicketManagement.Application.Features.Events.Queries.GetEventsListQuery;
 using Elkadeem.TicketManagement.Domain.Events;
 
@@ -28,6 +29,7 @@ namespace Elkadeem.TicketManagement.Application.Profiles
             CreateMap<Event, EventListItemModel>();
             CreateMap<CreateEventCommand, Event>();
             CreateMap<UpdateEventCommand, Event>();
+            CreateMap<Event, EventExportDto>();
         }
     }
 }

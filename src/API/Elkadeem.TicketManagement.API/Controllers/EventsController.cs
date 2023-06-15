@@ -2,6 +2,7 @@
 using Elkadeem.TicketManagement.Application.Features.Events.Commands.RemoveEvent;
 using Elkadeem.TicketManagement.Application.Features.Events.Commands.UpdateEvent;
 using Elkadeem.TicketManagement.Application.Features.Events.Queries.GetEventDetailQuery;
+using Elkadeem.TicketManagement.Application.Features.Events.Queries.GetEventsExportQuery;
 using Elkadeem.TicketManagement.Application.Features.Events.Queries.GetEventsListQuery;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -64,6 +65,13 @@ namespace Elkadeem.TicketManagement.API.Controllers
             var deleteEventCommand = new RemoveEventCommand() { EventId = id };
             await _mediator.Send(deleteEventCommand);
             return NoContent();
+        }
+
+        [HttpGet("csvevents", Name = "ExportEvents")]
+        public async Task<FileResult> ExportEvents()
+        {
+            var fileDto = await _mediator.Send(new GetEventsExportQuery());
+            return File(fileDto.Data!, fileDto.ContentType, fileDto.EventExportFileName);
         }
     }
 }
