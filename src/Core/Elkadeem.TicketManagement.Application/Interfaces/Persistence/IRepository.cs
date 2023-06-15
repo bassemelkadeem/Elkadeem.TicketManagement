@@ -16,6 +16,10 @@
 
         Task<IReadOnlyList<T>> GetAllAsync();
 
-        Task AddAsync(T entity);
+        Task<T> AddAsync(T entity);
+
+        int Save();
+
+        Task<int> SaveAsync();
     }
 }

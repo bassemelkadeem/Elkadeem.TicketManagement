@@ -21,7 +21,8 @@ namespace Elkadeem.TicketManagement.Application.Features.Events.Commands.RemoveE
                 throw new NotFoundException(nameof(eventToDelete), request.EventId);
             }
 
-            await _eventRepository.DeleteAsync(eventToDelete);
+            _eventRepository.Delete(eventToDelete);
+            await _eventRepository.SaveAsync();
         }
     }
 }

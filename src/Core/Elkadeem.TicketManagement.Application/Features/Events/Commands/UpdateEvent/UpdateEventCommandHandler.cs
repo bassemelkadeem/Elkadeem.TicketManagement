@@ -34,7 +34,8 @@ namespace Elkadeem.TicketManagement.Application.Features.Events.Commands.UpdateE
                 throw new ValidationException(validationResult);
 
             _mapper.Map(request, @eventToUpdate, typeof(UpdateEventCommand), typeof(Event));
-            await _eventRepository.UpdateAsync(eventToUpdate);
+            _eventRepository.Update(eventToUpdate);
+            await _eventRepository.SaveAsync();
         }
     }
 }

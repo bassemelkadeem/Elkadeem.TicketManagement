@@ -15,5 +15,7 @@ namespace Elkadeem.TicketManagement.Persistence.Shared
         DbSet<T> Set<T>() where T : class;
 
         Task<int> SaveAsync(CancellationToken cancellationToken = new CancellationToken());
+
+        int Save();
     }
 }

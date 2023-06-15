@@ -17,8 +17,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Configurations\Event\" />
-    <Folder Include="Configurations\Category\" />
     <Folder Include="Configurations\Order\" />
   </ItemGroup>
 

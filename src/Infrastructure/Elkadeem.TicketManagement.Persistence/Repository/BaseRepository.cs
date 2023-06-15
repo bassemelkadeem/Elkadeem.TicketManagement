@@ -1,15 +1,17 @@
 ﻿using Elkadeem.TicketManagement.Application.Interfaces.Persistence;
+using Elkadeem.TicketManagement.Persistence.Shared;
 using Microsoft.EntityFrameworkCore;
 
-namespace Elkadeem.TicketManagement.Persistence.Shared
+namespace Elkadeem.TicketManagement.Persistence.Repository
 {
-    public class BaseRepository<T> : IRepository<T> where T : class
+    public abstract class BaseRepository<T> : IRepository<T> where T : class
     {
-        private readonly IDatabaseContext _databaseContext;
+        protected readonly IDatabaseContext _databaseContext;
 
         public BaseRepository(IDatabaseContext databaseContext)
         {
-            _databaseContext = databaseContext ?? throw new ArgumentNullException(nameof(databaseContext));
+            _databaseContext = databaseContext
+                ?? throw new ArgumentNullException(nameof(databaseContext));
         }
 
         public void Add(T entity)
@@ -17,9 +19,10 @@ namespace Elkadeem.TicketManagement.Persistence.Shared
             _databaseContext.Set<T>().Add(entity);
         }
 
-        public async Task AddAsync(T entity)
+        public async Task<T> AddAsync(T entity)
         {
-            await _databaseContext.Set<T>().AddAsync(entity);
+            var entry = await _databaseContext.Set<T>().AddAsync(entity);
+            return entry.Entity;
         }
 
         public void Delete(T entity)
@@ -50,6 +53,16 @@ namespace Elkadeem.TicketManagement.Persistence.Shared
         public void Update(T entity)
         {
             _databaseContext.Set<T>().Update(entity);
+        }
+
+        public int Save()
+        {
+            return _databaseContext.Save();
+        }
+
+        public async Task<int> SaveAsync()
+        {
+            return await _databaseContext.SaveAsync();
         }
     }
 }

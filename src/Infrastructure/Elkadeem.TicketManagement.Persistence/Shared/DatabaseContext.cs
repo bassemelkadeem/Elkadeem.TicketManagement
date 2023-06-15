@@ -21,6 +21,27 @@ namespace Elkadeem.TicketManagement.Persistence.Shared
 
         public DbSet<Order> Orders { get; set; } = default!;
 
+        public int Save()
+        {
+            foreach (var entry in ChangeTracker.Entries<AuditableEntity>())
+            {
+                switch (entry.State)
+                {
+                    case EntityState.Added:
+                        entry.Entity.CreatedOn = DateTime.Now;
+                        entry.Entity.CreatedBy = ""; // _loggedInUserService.UserId;
+                        break;
+
+                    case EntityState.Modified:
+                        entry.Entity.UpdatedOn = DateTime.Now;
+                        entry.Entity.UpdatedBy = ""; // _loggedInUserService.UserId;
+                        break;
+                }
+            }
+
+            return base.SaveChanges();
+        }
+
         public async Task<int> SaveAsync(CancellationToken cancellationToken = new CancellationToken())
         {
             foreach (var entry in ChangeTracker.Entries<AuditableEntity>())
@@ -39,7 +60,7 @@ namespace Elkadeem.TicketManagement.Persistence.Shared
                 }
             }
 
-            return await base.SaveChangesAsync();
+            return await base.SaveChangesAsync(cancellationToken);
         }
 
         public new DbSet<T> Set<T>() where T : class
