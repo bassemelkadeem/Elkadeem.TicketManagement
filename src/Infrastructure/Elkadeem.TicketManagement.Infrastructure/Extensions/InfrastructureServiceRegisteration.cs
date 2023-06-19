@@ -1,5 +1,7 @@
-﻿using Elkadeem.TicketManagement.Application.Interfaces.Infrastructure.Mail;
+﻿using Elkadeem.TicketManagement.Application.Interfaces.Infrastructure.Export;
+using Elkadeem.TicketManagement.Application.Interfaces.Infrastructure.Mail;
 using Elkadeem.TicketManagement.Application.Interfaces.Infrastructure.Mail.Models;
+using Elkadeem.TicketManagement.Infrastructure.Export;
 using Elkadeem.TicketManagement.Infrastructure.Mail;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -22,6 +24,7 @@ namespace Elkadeem.TicketManagement.Infrastructure.Extensions
             });
 
             services.AddTransient<IEmailService, SendGridEmailService>();
+            services.AddTransient<ICsvExporter, CsvExporter>();
 
             return services;
         }
