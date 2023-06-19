@@ -23,7 +23,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Elkadeem.TicketManagement.P
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Elkadeem.TicketManagement.Infrastructure", "src\Infrastructure\Elkadeem.TicketManagement.Infrastructure\Elkadeem.TicketManagement.Infrastructure.csproj", "{F3C65BFD-A0CF-4DAF-B52E-343D487D2E9E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elkadeem.TicketManagement.API", "src\API\Elkadeem.TicketManagement.API\Elkadeem.TicketManagement.API.csproj", "{F3D46830-A915-4082-89B1-0A4BFC9832CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Elkadeem.TicketManagement.API", "src\API\Elkadeem.TicketManagement.API\Elkadeem.TicketManagement.API.csproj", "{F3D46830-A915-4082-89B1-0A4BFC9832CB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Elkadeem.TicketManagement.Presentation", "src\UI\Elkadeem.TicketManagement.Presentation\Elkadeem.TicketManagement.Presentation.csproj", "{B5B9E063-B096-463F-94B7-543EC1EE4379}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{F3D46830-A915-4082-89B1-0A4BFC9832CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3D46830-A915-4082-89B1-0A4BFC9832CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3D46830-A915-4082-89B1-0A4BFC9832CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5B9E063-B096-463F-94B7-543EC1EE4379}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5B9E063-B096-463F-94B7-543EC1EE4379}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5B9E063-B096-463F-94B7-543EC1EE4379}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5B9E063-B096-463F-94B7-543EC1EE4379}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -65,6 +71,7 @@ Global
 		{B7AA7841-6BA9-4FEC-AA0C-1AA4160DEC39} = {E64E8F36-2793-4201-9CFD-F6EC881B4968}
 		{F3C65BFD-A0CF-4DAF-B52E-343D487D2E9E} = {E64E8F36-2793-4201-9CFD-F6EC881B4968}
 		{F3D46830-A915-4082-89B1-0A4BFC9832CB} = {31B68F03-B408-4663-9C5F-7F5D5300CD6D}
+		{B5B9E063-B096-463F-94B7-543EC1EE4379} = {831BAAF5-3822-4294-ADC8-7A07D9291211}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2A9EF054-D8A3-4F1E-875F-D79A649466B4}
