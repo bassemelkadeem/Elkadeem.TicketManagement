@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using Elkadeem.TicketManagement.Presentation.Services.Base;
+using Elkadeem.TicketManagement.Presentation.ViewModels;
 
 namespace Elkadeem.TicketManagement.Presentation.Profiles
 {
@@ -6,7 +8,9 @@ namespace Elkadeem.TicketManagement.Presentation.Profiles
     {
         public Mappings()
         {
-            //CreateMap<>
+            CreateMap<CategoryItemModel, CategoryViewModel>();
+            CreateMap<CategoryItemWithEventsModel, CategoryWithEventsViewModel>();
+            CreateMap<EventItemModel, EventNestedViewModel>();
         }
     }
 }

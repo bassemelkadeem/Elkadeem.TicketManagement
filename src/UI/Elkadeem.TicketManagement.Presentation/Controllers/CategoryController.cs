@@ -1,12 +1,21 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Elkadeem.TicketManagement.Presentation.Contracts;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Elkadeem.TicketManagement.Presentation.Controllers
 {
     public class CategoryController : Controller
     {
-        public IActionResult Index()
+        private readonly ICategoryService categoryService;
+
+        public CategoryController(ICategoryService categoryService)
         {
-            return View();
+            this.categoryService = categoryService ?? throw new ArgumentNullException(nameof(categoryService));
+        }
+
+        public async Task<IActionResult> Index(bool includeHistory = false)
+        {
+            var categories = await categoryService.GetCategoryWithEvents(includeHistory);
+            return View(categories);
         }
     }
 }

@@ -21,10 +21,14 @@ namespace Elkadeem.TicketManagement.Persistence.Repository
             var allCategories = await _databaseContext.Categories.Include(a => a.Events).ToListAsync();
             if (!inCludeHistory)
             {
-                allCategories.ForEach(c =>
+                foreach (var cat in allCategories)
                 {
-                    c.Events.ToList().RemoveAll(a => a.Date < DateTime.Today);
-                });
+                    var eventsToRemove = cat.Events.Where(a => a.Date < DateTime.Today);
+                    foreach (var eventItem in eventsToRemove)
+                    {
+                        cat.Events.Remove(eventItem);
+                    }
+                }
             }
 
             return allCategories;
