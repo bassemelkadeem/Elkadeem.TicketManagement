@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<h1 class="page-title">Welcome to the Elkadeem Ticket Management System!</h1>
+<br />
+<h4>Using this application, you have access to all functionalities of Elkadeem Management System.</h4>
+
+<br />
+
+@if (User.Identity != null && User.Identity.IsAuthenticated)
+{
+    <form asp-action="Logout" asp-controller="Users" asp-area="">
+        <button type="submit">Logout</button>
+    </form>
+}
+else
+{
+    <a asp-action="Login" asp-controller="Users" asp-area="">Click here to log in</a>
+    <br />
+    <a asp-action="Register" asp-controller="Users" asp-area="">Click here to register</a>
+}
