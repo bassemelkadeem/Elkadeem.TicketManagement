@@ -1,4 +1,5 @@
-﻿using Elkadeem.TicketManagement.Presentation.ViewModels;
+﻿using Elkadeem.TicketManagement.Presentation.Services.Base;
+using Elkadeem.TicketManagement.Presentation.ViewModels;
 
 namespace Elkadeem.TicketManagement.Presentation.Contracts
 {
@@ -7,5 +8,7 @@ namespace Elkadeem.TicketManagement.Presentation.Contracts
         Task<IEnumerable<CategoryViewModel>> GetAllCategories();
 
         Task<IEnumerable<CategoryWithEventsViewModel>> GetCategoryWithEvents(bool includeHistory = false);
+
+        Task<CreateCategoryCommandResponse> AddCategory(CreateCategoryViewModel model);
     }
 }

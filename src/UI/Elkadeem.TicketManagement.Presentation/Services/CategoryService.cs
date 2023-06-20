@@ -30,5 +30,15 @@ namespace Elkadeem.TicketManagement.Presentation.Services
             var mappedCategoriesWithEvents = mapper.Map<List<CategoryWithEventsViewModel>>(allCategoriesWithEvents);
             return mappedCategoriesWithEvents;
         }
+
+        public async Task<CreateCategoryCommandResponse> AddCategory(CreateCategoryViewModel model)
+        {
+            var response = await _client.CreateNewCategoryAsync(new CreateCategoryCommand
+            {
+                Name = model.Name
+            });
+
+            return response;
+        }
     }
 }

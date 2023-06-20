@@ -1,0 +1,30 @@
+﻿@model CreateCategoryViewModel
+
+@{
+    var errors = ViewData["Errors"] as ICollection<string>;
+}
+
+@if (errors != null && errors.Any())
+{
+    <ul>
+        @foreach (var err in errors)
+        {
+            <li style="color: red;">
+                @err
+            </li>
+        }
+    </ul>
+}
+
+<form asp-action="Create" asp-controller="Category" method="post">
+    <h3 class="mb-5">New category</h3>
+    <div class="row mb-3 ms-2">
+        <label for="name" class="col-sm-3 form-label">Category name:</label>
+        <div class="col-sm-5">
+            <input class="form-control" asp-for="Name" placeholder="Enter category name" />
+            <span asp-validation-for="Name"></span>
+        </div>
+    </div>
+
+    <button type="submit" class="submit-button mt-3">Save category</button>
+</form>
