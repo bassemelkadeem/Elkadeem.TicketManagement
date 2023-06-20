@@ -39,6 +39,7 @@ namespace Elkadeem.TicketManagement.Application.Features.Categories.Commands.Cre
             {
                 var category = new Category() { Name = request.Name };
                 category = await _categoryRepository.AddAsync(category);
+                await _categoryRepository.SaveAsync();
                 response.CreatedCategoryDto = _mapper.Map<CreatedCategoryDto>(category);
                 response.Message = "Successfully added category";
             }
