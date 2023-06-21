@@ -18,7 +18,7 @@ namespace Elkadeem.TicketManagement.Persistence.Repository.Tickets
 
         public async Task<List<Order>> GetPagedOrdersForMonth(DateTime date, int page, int size)
         {
-            return await _databaseContext.Orders.Where(x => x.OrderPlaced.Month == date.Month && x.OrderPlaced.Year == date.Year)
+            return await _dbContext.Orders.Where(x => x.OrderPlaced.Month == date.Month && x.OrderPlaced.Year == date.Year)
                 .Skip((page - 1) * size)
                 .Take(size)
                 .AsNoTracking().ToListAsync();
@@ -26,7 +26,7 @@ namespace Elkadeem.TicketManagement.Persistence.Repository.Tickets
 
         public async Task<int> GetTotalCountOfOrdersForMonth(DateTime date)
         {
-            return await _databaseContext.Orders
+            return await _dbContext.Orders
                 .CountAsync(x => x.OrderPlaced.Month == date.Month && x.OrderPlaced.Year == date.Year);
         }
     }

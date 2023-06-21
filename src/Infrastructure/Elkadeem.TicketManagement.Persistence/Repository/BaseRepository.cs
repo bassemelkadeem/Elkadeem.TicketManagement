@@ -1,68 +1,68 @@
 ﻿using Elkadeem.TicketManagement.Application.Interfaces.Persistence.Shared;
-using Elkadeem.TicketManagement.Persistence.DbContexts.Tickets;
+using Elkadeem.TicketManagement.Persistence.DbContexts;
 using Microsoft.EntityFrameworkCore;
 
 namespace Elkadeem.TicketManagement.Persistence.Repository
 {
     public class BaseRepository<T> : IRepository<T> where T : class
     {
-        protected readonly ITicketDbContext _databaseContext;
+        protected readonly IBaseDbContext _dbContext;
 
-        public BaseRepository(ITicketDbContext databaseContext)
+        public BaseRepository(IBaseDbContext databaseContext)
         {
-            _databaseContext = databaseContext
+            _dbContext = databaseContext
                 ?? throw new ArgumentNullException(nameof(databaseContext));
         }
 
         public void Add(T entity)
         {
-            _databaseContext.Set<T>().Add(entity);
+            _dbContext.Set<T>().Add(entity);
         }
 
         public async Task<T> AddAsync(T entity)
         {
-            var entry = await _databaseContext.Set<T>().AddAsync(entity);
+            var entry = await _dbContext.Set<T>().AddAsync(entity);
             return entry.Entity;
         }
 
         public void Delete(T entity)
         {
-            _databaseContext.Set<T>().Remove(entity);
+            _dbContext.Set<T>().Remove(entity);
         }
 
         public IReadOnlyList<T> GetAll()
         {
-            return _databaseContext.Set<T>().ToList();
+            return _dbContext.Set<T>().ToList();
         }
 
         public async Task<IReadOnlyList<T>> GetAllAsync()
         {
-            return await _databaseContext.Set<T>().ToListAsync();
+            return await _dbContext.Set<T>().ToListAsync();
         }
 
         public T GetById(object id)
         {
-            return _databaseContext.Set<T>().Find(id)!;
+            return _dbContext.Set<T>().Find(id)!;
         }
 
         public async Task<T> GetByIdAsync(object id)
         {
-            return (await _databaseContext.Set<T>().FindAsync(id))!;
+            return (await _dbContext.Set<T>().FindAsync(id))!;
         }
 
         public void Update(T entity)
         {
-            _databaseContext.Set<T>().Update(entity);
+            _dbContext.Set<T>().Update(entity);
         }
 
         public int Save()
         {
-            return _databaseContext.Save();
+            return _dbContext.Save();
         }
 
         public async Task<int> SaveAsync()
         {
-            return await _databaseContext.SaveAsync();
+            return await _dbContext.SaveAsync();
         }
     }
 }

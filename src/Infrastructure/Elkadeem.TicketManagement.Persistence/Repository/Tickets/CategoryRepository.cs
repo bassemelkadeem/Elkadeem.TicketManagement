@@ -18,7 +18,7 @@ namespace Elkadeem.TicketManagement.Persistence.Repository.Tickets
 
         public async Task<IReadOnlyList<Category>> GetAllCategoriesWithEventsAsync(bool inCludeHistory)
         {
-            var allCategories = await _databaseContext.Categories.Include(a => a.Events).ToListAsync();
+            var allCategories = await _dbContext.Categories.Include(a => a.Events).ToListAsync();
             if (!inCludeHistory)
             {
                 foreach (var cat in allCategories)

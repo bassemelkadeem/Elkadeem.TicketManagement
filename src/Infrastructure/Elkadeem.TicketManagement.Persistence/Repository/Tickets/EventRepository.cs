@@ -18,7 +18,7 @@ namespace Elkadeem.TicketManagement.Persistence.Repository.Tickets
 
         public async Task<bool> IsEventNameAndDateUniqueAsync(string name, DateTime date)
         {
-            var isMatch = await _databaseContext.Events.AnyAsync(a => a.Name.Equals(name) && a.Date.Date.Equals(date.Date));
+            var isMatch = await _dbContext.Events.AnyAsync(a => a.Name.Equals(name) && a.Date.Date.Equals(date.Date));
             return isMatch;
         }
     }

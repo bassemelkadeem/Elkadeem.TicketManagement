@@ -1,6 +1,8 @@
-﻿using Elkadeem.TicketManagement.Application.Interfaces.Persistence.Dishes;
+﻿using Elkadeem.TicketManagement.Application.Interfaces.Persistence.Courses;
+using Elkadeem.TicketManagement.Application.Interfaces.Persistence.Dishes;
 using Elkadeem.TicketManagement.Application.Interfaces.Persistence.Shared;
 using Elkadeem.TicketManagement.Application.Interfaces.Persistence.Tickets;
+using Elkadeem.TicketManagement.Persistence.DbContexts.Courses;
 using Elkadeem.TicketManagement.Persistence.DbContexts.Dishes;
 using Elkadeem.TicketManagement.Persistence.DbContexts.Tickets;
 using Elkadeem.TicketManagement.Persistence.Repository.Dishes;
@@ -26,6 +28,10 @@ namespace Elkadeem.TicketManagement.Persistence.Extensions
             services.AddScoped<IDishesDbContext, DishesDbContext>();
             services.AddScoped<IIngredientsRepository, IngredientsRepository>();
             services.AddScoped<IDishesRepository, DishesRepository>();
+
+            // Courses db context
+            services.AddScoped<ICourseLibraryDbContext, CourseLibraryDbContext>();
+            services.AddScoped<ICourseRepository, CourseRepository>();
 
             return services;
         }
