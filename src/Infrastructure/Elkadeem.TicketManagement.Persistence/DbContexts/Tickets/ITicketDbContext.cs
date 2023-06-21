@@ -2,7 +2,7 @@
 using Elkadeem.TicketManagement.Domain.Orders;
 using Microsoft.EntityFrameworkCore;
 
-namespace Elkadeem.TicketManagement.Persistence.DbContexts
+namespace Elkadeem.TicketManagement.Persistence.DbContexts.Tickets
 {
     public partial interface ITicketDbContext : IBaseDbContext
     {

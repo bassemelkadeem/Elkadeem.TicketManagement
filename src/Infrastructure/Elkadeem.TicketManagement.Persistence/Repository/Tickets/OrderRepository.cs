@@ -1,6 +1,6 @@
 ﻿using Elkadeem.TicketManagement.Application.Interfaces.Persistence.Tickets;
 using Elkadeem.TicketManagement.Domain.Orders;
-using Elkadeem.TicketManagement.Persistence.DbContexts;
+using Elkadeem.TicketManagement.Persistence.DbContexts.Tickets;
 using Microsoft.EntityFrameworkCore;
 
 namespace Elkadeem.TicketManagement.Persistence.Repository.Tickets

@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
-namespace Elkadeem.TicketManagement.Persistence.DbContexts
+namespace Elkadeem.TicketManagement.Persistence.DbContexts.Dishes
 {
     public class DishesDbContext : BaseDbContext, IDishesDbContext
     {

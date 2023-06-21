@@ -1,7 +1,8 @@
 ﻿using Elkadeem.TicketManagement.Application.Interfaces.Persistence.Dishes;
 using Elkadeem.TicketManagement.Application.Interfaces.Persistence.Shared;
 using Elkadeem.TicketManagement.Application.Interfaces.Persistence.Tickets;
-using Elkadeem.TicketManagement.Persistence.DbContexts;
+using Elkadeem.TicketManagement.Persistence.DbContexts.Dishes;
+using Elkadeem.TicketManagement.Persistence.DbContexts.Tickets;
 using Elkadeem.TicketManagement.Persistence.Repository.Dishes;
 using Elkadeem.TicketManagement.Persistence.Repository.Tickets;
 using Elkadeem.TicketManagement.Persistence.UnitOfWork;

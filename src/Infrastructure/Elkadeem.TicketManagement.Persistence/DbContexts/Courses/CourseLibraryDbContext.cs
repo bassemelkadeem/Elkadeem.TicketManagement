@@ -1,7 +1,7 @@
 ﻿using Elkadeem.TicketManagement.Domain.Courses;
 using Microsoft.EntityFrameworkCore;
 
-namespace Elkadeem.TicketManagement.Persistence.DbContexts
+namespace Elkadeem.TicketManagement.Persistence.DbContexts.Courses
 {
     public class CourseLibraryDbContext : BaseDbContext, ICourseLibraryDbContext
     {

@@ -1,5 +1,5 @@
 ﻿using Elkadeem.TicketManagement.Application.Interfaces.Persistence.Shared;
-using Elkadeem.TicketManagement.Persistence.DbContexts;
+using Elkadeem.TicketManagement.Persistence.DbContexts.Dishes;
 using Microsoft.EntityFrameworkCore;
 
 namespace Elkadeem.TicketManagement.Persistence.Repository.Dishes

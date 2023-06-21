@@ -1,6 +1,6 @@
 ﻿using Elkadeem.TicketManagement.Application.Extensions;
 using Elkadeem.TicketManagement.Infrastructure.Extensions;
-using Elkadeem.TicketManagement.Persistence.DbContexts;
+using Elkadeem.TicketManagement.Persistence.DbContexts.Tickets;
 using Elkadeem.TicketManagement.Persistence.Extensions;
 
 namespace Elkadeem.TicketManagement.API

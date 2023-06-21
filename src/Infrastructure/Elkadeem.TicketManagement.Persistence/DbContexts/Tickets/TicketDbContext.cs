@@ -3,7 +3,7 @@ using Elkadeem.TicketManagement.Domain.Orders;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
-namespace Elkadeem.TicketManagement.Persistence.DbContexts
+namespace Elkadeem.TicketManagement.Persistence.DbContexts.Tickets
 {
     public class TicketDbContext : BaseDbContext, ITicketDbContext
     {
