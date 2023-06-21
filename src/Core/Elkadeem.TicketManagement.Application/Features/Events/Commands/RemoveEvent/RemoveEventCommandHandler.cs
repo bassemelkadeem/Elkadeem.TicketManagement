@@ -1,4 +1,4 @@
-﻿using Elkadeem.TicketManagement.Application.Extensions;
+﻿using Elkadeem.TicketManagement.Application.Exceptions;
 using Elkadeem.TicketManagement.Application.Interfaces.Persistence;
 using MediatR;
 

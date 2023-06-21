@@ -1,4 +1,4 @@
-﻿namespace Elkadeem.TicketManagement.Application.Extensions
+﻿namespace Elkadeem.TicketManagement.Application.Exceptions
 {
     public class NotFoundException : Exception
     {

@@ -1,6 +1,8 @@
-﻿namespace Elkadeem.TicketManagement.Application.Interfaces.Persistence.Dishes
+﻿using Elkadeem.TicketManagement.Domain.Dishes;
+
+namespace Elkadeem.TicketManagement.Application.Interfaces.Persistence.Dishes
 {
-    public interface IIngredientsRepository
+    public interface IIngredientsRepository : IRepository<Ingredient>
     {
     }
 }

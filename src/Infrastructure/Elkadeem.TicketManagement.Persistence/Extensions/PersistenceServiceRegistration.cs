@@ -22,7 +22,7 @@ namespace Elkadeem.TicketManagement.Persistence.Extensions
             // Dishes db context 
             services.AddScoped<IDishesDatabaseContext, DishesDatabaseContext>();
             services.AddScoped<IIngredientsRepository, IngredientsRepository>();
-            services.AddScoped(typeof(IRepository<>), typeof(DishesBaseRepository<>));
+            services.AddScoped<IDishesRepository, DishesRepository>();
 
             return services;
         }

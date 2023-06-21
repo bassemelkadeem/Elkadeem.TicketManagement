@@ -1,14 +1,13 @@
 ﻿using Elkadeem.TicketManagement.Application.Interfaces.Persistence.Dishes;
+using Elkadeem.TicketManagement.Domain.Dishes;
 
 namespace Elkadeem.TicketManagement.Persistence.Dishes
 {
-    public class IngredientsRepository : IIngredientsRepository
+    public class IngredientsRepository : DishesBaseRepository<Ingredient>, IIngredientsRepository
     {
-        private readonly IDishesDatabaseContext _databaseContext;
-
-        public IngredientsRepository(IDishesDatabaseContext databaseContext)
+        public IngredientsRepository(IDishesDatabaseContext dishesDatabaseContext)
+            : base(dishesDatabaseContext)
         {
-            _databaseContext = databaseContext ?? throw new ArgumentNullException(nameof(databaseContext));
         }
     }
 }

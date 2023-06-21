@@ -3,7 +3,7 @@ using Elkadeem.TicketManagement.Domain.Dishes;
 
 namespace Elkadeem.TicketManagement.Persistence.Dishes
 {
-    public class DishesRepository : DishesBaseRepository<Dish>, IDishesRepository<Dish>
+    public class DishesRepository : DishesBaseRepository<Dish>, IDishesRepository
     {
         public DishesRepository(IDishesDatabaseContext dishesDatabaseContext) :
             base(dishesDatabaseContext)
