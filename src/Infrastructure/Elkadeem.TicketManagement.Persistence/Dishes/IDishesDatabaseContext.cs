@@ -9,6 +9,9 @@ namespace Elkadeem.TicketManagement.Persistence.Dishes
 
         DbSet<Ingredient> Ingredients { get; set; }
 
+        Task EnsureDeleteAsync();
+        Task MigrateAsync();
+
         int Save();
 
         Task<int> SaveAsync();
