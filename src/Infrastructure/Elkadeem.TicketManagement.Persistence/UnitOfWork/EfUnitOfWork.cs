@@ -1,12 +1,13 @@
 ﻿using Elkadeem.TicketManagement.Application.Interfaces.Persistence.Shared;
+using Elkadeem.TicketManagement.Persistence.DbContexts;
 
-namespace Elkadeem.TicketManagement.Persistence.Shared
+namespace Elkadeem.TicketManagement.Persistence.UnitOfWork
 {
-    public class UnitOfWork : IUnitOfWork
+    public class EfUnitOfWork : IUnitOfWork
     {
-        private readonly IDatabaseContext _databaseContext;
+        private readonly ITicketDbContext _databaseContext;
 
-        public UnitOfWork(IDatabaseContext databaseContext)
+        public EfUnitOfWork(ITicketDbContext databaseContext)
         {
             _databaseContext = databaseContext ?? throw new ArgumentNullException(nameof(databaseContext));
         }

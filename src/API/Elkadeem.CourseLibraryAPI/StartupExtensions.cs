@@ -1,6 +1,6 @@
 ﻿using Elkadeem.TicketManagement.Persistence.DbContexts;
 
-namespace Elkadeem.DishesAPI
+namespace Elkadeem.CourseLibraryAPI
 {
     public static class StartupExtensions
     {

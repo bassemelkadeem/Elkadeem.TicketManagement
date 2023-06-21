@@ -2,13 +2,13 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
-namespace Elkadeem.TicketManagement.Persistence.Dishes
+namespace Elkadeem.TicketManagement.Persistence.DbContexts
 {
-    public class DishesDatabaseContext : DbContext, IDishesDatabaseContext
+    public class DishesDbContext : BaseDbContext, IDishesDbContext
     {
         private readonly IConfiguration _configuration;
 
-        public DishesDatabaseContext(IConfiguration configuration)
+        public DishesDbContext(IConfiguration configuration)
         {
             _configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
         }
@@ -16,26 +16,6 @@ namespace Elkadeem.TicketManagement.Persistence.Dishes
         public DbSet<Dish> Dishes { get; set; }
 
         public DbSet<Ingredient> Ingredients { get; set; }
-
-        public Task EnsureDeleteAsync()
-        {
-            return Database.EnsureDeletedAsync();
-        }
-
-        public Task MigrateAsync()
-        {
-            return Database.MigrateAsync();
-        }
-
-        public int Save()
-        {
-            return SaveChanges();
-        }
-
-        public Task<int> SaveAsync()
-        {
-            return SaveChangesAsync();
-        }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

@@ -1,13 +1,13 @@
 ﻿using Elkadeem.TicketManagement.Application.Interfaces.Persistence.Tickets;
 using Elkadeem.TicketManagement.Domain.Orders;
-using Elkadeem.TicketManagement.Persistence.Shared;
+using Elkadeem.TicketManagement.Persistence.DbContexts;
 using Microsoft.EntityFrameworkCore;
 
-namespace Elkadeem.TicketManagement.Persistence.Repository
+namespace Elkadeem.TicketManagement.Persistence.Repository.Tickets
 {
     public class OrderRepository : BaseRepository<Order>, IOrderRepository
     {
-        public OrderRepository(IDatabaseContext databaseContext)
+        public OrderRepository(ITicketDbContext databaseContext)
             : base(databaseContext)
         {
             if (databaseContext is null)

@@ -1,17 +1,15 @@
-﻿using Elkadeem.TicketManagement.Domain.Common;
-using Elkadeem.TicketManagement.Domain.Events;
+﻿using Elkadeem.TicketManagement.Domain.Events;
 using Elkadeem.TicketManagement.Domain.Orders;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Options;
 
-namespace Elkadeem.TicketManagement.Persistence.Shared
+namespace Elkadeem.TicketManagement.Persistence.DbContexts
 {
-    public class DatabaseContext : DbContext, IDatabaseContext
+    public class TicketDbContext : BaseDbContext, ITicketDbContext
     {
         private readonly IConfiguration _configuration;
 
-        public DatabaseContext(IConfiguration configuration)
+        public TicketDbContext(IConfiguration configuration)
         {
             _configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
         }
@@ -21,63 +19,6 @@ namespace Elkadeem.TicketManagement.Persistence.Shared
         public DbSet<Category> Categories { get; set; } = default!;
 
         public DbSet<Order> Orders { get; set; } = default!;
-
-        public async Task EnsureDeleteAsync()
-        {
-            await Database.EnsureDeletedAsync();
-        }
-
-        public async Task MigrateAsync()
-        {
-            await Database.MigrateAsync();
-        }
-
-        public int Save()
-        {
-            foreach (var entry in ChangeTracker.Entries<AuditableEntity>())
-            {
-                switch (entry.State)
-                {
-                    case EntityState.Added:
-                        entry.Entity.CreatedOn = DateTime.Now;
-                        entry.Entity.CreatedBy = ""; // _loggedInUserService.UserId;
-                        break;
-
-                    case EntityState.Modified:
-                        entry.Entity.UpdatedOn = DateTime.Now;
-                        entry.Entity.UpdatedBy = ""; // _loggedInUserService.UserId;
-                        break;
-                }
-            }
-
-            return base.SaveChanges();
-        }
-
-        public async Task<int> SaveAsync(CancellationToken cancellationToken = new CancellationToken())
-        {
-            foreach (var entry in ChangeTracker.Entries<AuditableEntity>())
-            {
-                switch (entry.State)
-                {
-                    case EntityState.Added:
-                        entry.Entity.CreatedOn = DateTime.Now;
-                        entry.Entity.CreatedBy = ""; // _loggedInUserService.UserId;
-                        break;
-
-                    case EntityState.Modified:
-                        entry.Entity.UpdatedOn = DateTime.Now;
-                        entry.Entity.UpdatedBy = ""; // _loggedInUserService.UserId;
-                        break;
-                }
-            }
-
-            return await base.SaveChangesAsync(cancellationToken);
-        }
-
-        public new DbSet<T> Set<T>() where T : class
-        {
-            return base.Set<T>();
-        }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -96,7 +37,7 @@ namespace Elkadeem.TicketManagement.Persistence.Shared
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.ApplyConfigurationsFromAssembly(typeof(DatabaseContext).Assembly);
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(TicketDbContext).Assembly);
 
             // Seed database
             //seed data, added through migrations

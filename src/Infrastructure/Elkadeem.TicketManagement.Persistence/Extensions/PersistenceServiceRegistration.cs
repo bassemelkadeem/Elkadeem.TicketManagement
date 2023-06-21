@@ -1,9 +1,10 @@
 ﻿using Elkadeem.TicketManagement.Application.Interfaces.Persistence.Dishes;
 using Elkadeem.TicketManagement.Application.Interfaces.Persistence.Shared;
 using Elkadeem.TicketManagement.Application.Interfaces.Persistence.Tickets;
-using Elkadeem.TicketManagement.Persistence.Dishes;
-using Elkadeem.TicketManagement.Persistence.Repository;
-using Elkadeem.TicketManagement.Persistence.Shared;
+using Elkadeem.TicketManagement.Persistence.DbContexts;
+using Elkadeem.TicketManagement.Persistence.Repository.Dishes;
+using Elkadeem.TicketManagement.Persistence.Repository.Tickets;
+using Elkadeem.TicketManagement.Persistence.UnitOfWork;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Elkadeem.TicketManagement.Persistence.Extensions
@@ -12,16 +13,16 @@ namespace Elkadeem.TicketManagement.Persistence.Extensions
     {
         public static IServiceCollection AddPersistenceServices(this IServiceCollection services)
         {
-            services.AddScoped<IDatabaseContext, DatabaseContext>();
+            services.AddScoped<ITicketDbContext, TicketDbContext>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<IEventRepository, EventRepository>();
             services.AddScoped<IOrderRepository, OrderRepository>();
-            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<IUnitOfWork, EfUnitOfWork>();
 
 
 
             // Dishes db context 
-            services.AddScoped<IDishesDatabaseContext, DishesDatabaseContext>();
+            services.AddScoped<IDishesDbContext, DishesDbContext>();
             services.AddScoped<IIngredientsRepository, IngredientsRepository>();
             services.AddScoped<IDishesRepository, DishesRepository>();
 

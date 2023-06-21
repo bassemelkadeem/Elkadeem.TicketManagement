@@ -1,13 +1,13 @@
 ﻿using Elkadeem.TicketManagement.Application.Interfaces.Persistence.Tickets;
 using Elkadeem.TicketManagement.Domain.Events;
-using Elkadeem.TicketManagement.Persistence.Shared;
+using Elkadeem.TicketManagement.Persistence.DbContexts;
 using Microsoft.EntityFrameworkCore;
 
-namespace Elkadeem.TicketManagement.Persistence.Repository
+namespace Elkadeem.TicketManagement.Persistence.Repository.Tickets
 {
     public class CategoryRepository : BaseRepository<Category>, ICategoryRepository
     {
-        public CategoryRepository(IDatabaseContext databaseContext)
+        public CategoryRepository(ITicketDbContext databaseContext)
             : base(databaseContext)
         {
             if (databaseContext is null)

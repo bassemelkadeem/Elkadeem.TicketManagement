@@ -1,7 +1,7 @@
 ﻿using Elkadeem.TicketManagement.Application.Extensions;
 using Elkadeem.TicketManagement.Infrastructure.Extensions;
+using Elkadeem.TicketManagement.Persistence.DbContexts;
 using Elkadeem.TicketManagement.Persistence.Extensions;
-using Elkadeem.TicketManagement.Persistence.Shared;
 
 namespace Elkadeem.TicketManagement.API
 {
@@ -56,7 +56,7 @@ namespace Elkadeem.TicketManagement.API
             using var scope = app.Services.CreateScope();
             try
             {
-                var dbContext = scope.ServiceProvider.GetService<IDatabaseContext>();
+                var dbContext = scope.ServiceProvider.GetService<ITicketDbContext>();
                 if (dbContext != null)
                 {
                     await dbContext.EnsureDeleteAsync();
