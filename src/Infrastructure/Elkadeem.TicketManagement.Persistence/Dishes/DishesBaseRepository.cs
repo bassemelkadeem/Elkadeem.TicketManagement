@@ -1,4 +1,4 @@
-﻿using Elkadeem.TicketManagement.Application.Interfaces.Persistence;
+﻿using Elkadeem.TicketManagement.Application.Interfaces.Persistence.Shared;
 using Microsoft.EntityFrameworkCore;
 
 namespace Elkadeem.TicketManagement.Persistence.Dishes

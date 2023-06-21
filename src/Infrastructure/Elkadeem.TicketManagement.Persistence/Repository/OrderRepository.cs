@@ -1,4 +1,4 @@
-﻿using Elkadeem.TicketManagement.Application.Interfaces.Persistence;
+﻿using Elkadeem.TicketManagement.Application.Interfaces.Persistence.Tickets;
 using Elkadeem.TicketManagement.Domain.Orders;
 using Elkadeem.TicketManagement.Persistence.Shared;
 using Microsoft.EntityFrameworkCore;

@@ -1,5 +1,6 @@
-﻿using Elkadeem.TicketManagement.Application.Interfaces.Persistence;
-using Elkadeem.TicketManagement.Application.Interfaces.Persistence.Dishes;
+﻿using Elkadeem.TicketManagement.Application.Interfaces.Persistence.Dishes;
+using Elkadeem.TicketManagement.Application.Interfaces.Persistence.Shared;
+using Elkadeem.TicketManagement.Application.Interfaces.Persistence.Tickets;
 using Elkadeem.TicketManagement.Persistence.Dishes;
 using Elkadeem.TicketManagement.Persistence.Repository;
 using Elkadeem.TicketManagement.Persistence.Shared;

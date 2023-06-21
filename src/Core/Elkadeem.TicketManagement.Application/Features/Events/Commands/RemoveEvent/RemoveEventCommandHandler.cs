@@ -1,5 +1,5 @@
 ﻿using Elkadeem.TicketManagement.Application.Exceptions;
-using Elkadeem.TicketManagement.Application.Interfaces.Persistence;
+using Elkadeem.TicketManagement.Application.Interfaces.Persistence.Tickets;
 using MediatR;
 
 namespace Elkadeem.TicketManagement.Application.Features.Events.Commands.RemoveEvent

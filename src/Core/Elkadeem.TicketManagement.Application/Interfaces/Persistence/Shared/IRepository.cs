@@ -1,4 +1,4 @@
-﻿namespace Elkadeem.TicketManagement.Application.Interfaces.Persistence
+﻿namespace Elkadeem.TicketManagement.Application.Interfaces.Persistence.Shared
 {
     public interface IRepository<T> where T : class
     {

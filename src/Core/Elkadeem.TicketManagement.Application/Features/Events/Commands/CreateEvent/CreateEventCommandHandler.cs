@@ -2,7 +2,7 @@
 using Elkadeem.TicketManagement.Application.Exceptions;
 using Elkadeem.TicketManagement.Application.Interfaces.Infrastructure.Mail;
 using Elkadeem.TicketManagement.Application.Interfaces.Infrastructure.Mail.Models;
-using Elkadeem.TicketManagement.Application.Interfaces.Persistence;
+using Elkadeem.TicketManagement.Application.Interfaces.Persistence.Tickets;
 using Elkadeem.TicketManagement.Domain.Events;
 using MediatR;
 using Microsoft.Extensions.Logging;

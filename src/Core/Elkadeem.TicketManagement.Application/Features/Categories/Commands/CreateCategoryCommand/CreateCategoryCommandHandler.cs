@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Elkadeem.TicketManagement.Application.Interfaces.Persistence;
+using Elkadeem.TicketManagement.Application.Interfaces.Persistence.Tickets;
 using Elkadeem.TicketManagement.Domain.Events;
 using MediatR;
 

@@ -1,4 +1,5 @@
-﻿using Elkadeem.TicketManagement.Domain.Dishes;
+﻿using Elkadeem.TicketManagement.Application.Interfaces.Persistence.Shared;
+using Elkadeem.TicketManagement.Domain.Dishes;
 
 namespace Elkadeem.TicketManagement.Application.Interfaces.Persistence.Dishes
 {

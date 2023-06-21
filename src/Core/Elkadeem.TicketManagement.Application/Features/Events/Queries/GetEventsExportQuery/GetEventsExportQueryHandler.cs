@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Elkadeem.TicketManagement.Application.Interfaces.Infrastructure.Export;
-using Elkadeem.TicketManagement.Application.Interfaces.Persistence;
+using Elkadeem.TicketManagement.Application.Interfaces.Persistence.Tickets;
 using MediatR;
 
 namespace Elkadeem.TicketManagement.Application.Features.Events.Queries.GetEventsExportQuery

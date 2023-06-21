@@ -1,4 +1,4 @@
-﻿using Elkadeem.TicketManagement.Application.Interfaces.Persistence;
+﻿using Elkadeem.TicketManagement.Application.Interfaces.Persistence.Tickets;
 using FluentValidation;
 
 namespace Elkadeem.TicketManagement.Application.Features.Events.Commands.CreateEvent

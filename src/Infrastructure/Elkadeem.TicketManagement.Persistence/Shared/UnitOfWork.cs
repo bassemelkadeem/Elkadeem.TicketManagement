@@ -1,4 +1,4 @@
-﻿using Elkadeem.TicketManagement.Application.Interfaces.Persistence;
+﻿using Elkadeem.TicketManagement.Application.Interfaces.Persistence.Shared;
 
 namespace Elkadeem.TicketManagement.Persistence.Shared
 {

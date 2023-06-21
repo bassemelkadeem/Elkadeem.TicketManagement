@@ -1,8 +1,7 @@
 ﻿using AutoMapper;
 using Elkadeem.TicketManagement.Application.Exceptions;
-using Elkadeem.TicketManagement.Application.Extensions;
 using Elkadeem.TicketManagement.Application.Features.Events.Commands.CreateEvent;
-using Elkadeem.TicketManagement.Application.Interfaces.Persistence;
+using Elkadeem.TicketManagement.Application.Interfaces.Persistence.Tickets;
 using Elkadeem.TicketManagement.Domain.Events;
 using MediatR;
 

@@ -1,6 +1,7 @@
-﻿using Elkadeem.TicketManagement.Domain.Orders;
+﻿using Elkadeem.TicketManagement.Application.Interfaces.Persistence.Shared;
+using Elkadeem.TicketManagement.Domain.Orders;
 
-namespace Elkadeem.TicketManagement.Application.Interfaces.Persistence
+namespace Elkadeem.TicketManagement.Application.Interfaces.Persistence.Tickets
 {
     public interface IOrderRepository : IRepository<Order>
     {
