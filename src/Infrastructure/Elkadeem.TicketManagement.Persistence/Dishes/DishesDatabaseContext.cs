@@ -17,6 +17,16 @@ namespace Elkadeem.TicketManagement.Persistence.Dishes
 
         public DbSet<Ingredient> Ingredients { get; set; }
 
+        public int Save()
+        {
+            return SaveChanges();
+        }
+
+        public Task<int> SaveAsync()
+        {
+            return SaveChangesAsync();
+        }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);

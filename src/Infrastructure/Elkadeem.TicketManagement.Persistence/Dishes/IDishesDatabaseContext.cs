@@ -8,5 +8,11 @@ namespace Elkadeem.TicketManagement.Persistence.Dishes
         DbSet<Dish> Dishes { get; set; }
 
         DbSet<Ingredient> Ingredients { get; set; }
+
+        int Save();
+
+        Task<int> SaveAsync();
+
+        DbSet<T> Set<T>() where T : class;
     }
 }

@@ -12,8 +12,6 @@ namespace Elkadeem.TicketManagement.Persistence.Extensions
         public static IServiceCollection AddPersistenceServices(this IServiceCollection services)
         {
             services.AddScoped<IDatabaseContext, DatabaseContext>();
-            services.AddScoped(typeof(IRepository<>), typeof(BaseRepository<>));
-
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<IEventRepository, EventRepository>();
             services.AddScoped<IOrderRepository, OrderRepository>();
@@ -23,8 +21,8 @@ namespace Elkadeem.TicketManagement.Persistence.Extensions
 
             // Dishes db context 
             services.AddScoped<IDishesDatabaseContext, DishesDatabaseContext>();
-            services.AddScoped<IDishesRepository, DishesRepository>();
             services.AddScoped<IIngredientsRepository, IngredientsRepository>();
+            services.AddScoped(typeof(IRepository<>), typeof(DishesBaseRepository<>));
 
             return services;
         }
