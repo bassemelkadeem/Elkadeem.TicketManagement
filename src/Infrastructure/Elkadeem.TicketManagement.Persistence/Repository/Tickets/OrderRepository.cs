@@ -7,13 +7,12 @@ namespace Elkadeem.TicketManagement.Persistence.Repository.Tickets
 {
     public class OrderRepository : BaseRepository<Order>, IOrderRepository
     {
-        public OrderRepository(ITicketDbContext databaseContext)
-            : base(databaseContext)
+        private readonly ITicketDbContext _dbContext;
+
+        public OrderRepository(ITicketDbContext dbContext)
+            : base(dbContext)
         {
-            if (databaseContext is null)
-            {
-                throw new ArgumentNullException(nameof(databaseContext));
-            }
+            _dbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
         }
 
         public async Task<List<Order>> GetPagedOrdersForMonth(DateTime date, int page, int size)

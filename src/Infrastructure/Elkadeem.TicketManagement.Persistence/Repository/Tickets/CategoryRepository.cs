@@ -7,13 +7,12 @@ namespace Elkadeem.TicketManagement.Persistence.Repository.Tickets
 {
     public class CategoryRepository : BaseRepository<Category>, ICategoryRepository
     {
-        public CategoryRepository(ITicketDbContext databaseContext)
-            : base(databaseContext)
+        private readonly ITicketDbContext _dbContext;
+
+        public CategoryRepository(ITicketDbContext dbContext)
+            : base(dbContext)
         {
-            if (databaseContext is null)
-            {
-                throw new ArgumentNullException(nameof(databaseContext));
-            }
+            _dbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
         }
 
         public async Task<IReadOnlyList<Category>> GetAllCategoriesWithEventsAsync(bool inCludeHistory)

@@ -4,11 +4,14 @@ using Elkadeem.TicketManagement.Persistence.DbContexts.Dishes;
 
 namespace Elkadeem.TicketManagement.Persistence.Repository.Dishes
 {
-    public class DishesRepository : DishesBaseRepository<Dish>, IDishesRepository
+    public class DishesRepository : BaseRepository<Dish>, IDishesRepository
     {
-        public DishesRepository(IDishesDbContext dishesDatabaseContext) :
-            base(dishesDatabaseContext)
+        private readonly IDishesDbContext _dbContext;
+
+        public DishesRepository(IDishesDbContext dbContext) :
+            base(dbContext)
         {
+            _dbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
         }
     }
 }

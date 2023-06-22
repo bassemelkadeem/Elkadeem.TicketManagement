@@ -1,13 +1,12 @@
 ﻿using Elkadeem.TicketManagement.Application.Interfaces.Persistence.Courses;
 using Elkadeem.TicketManagement.Application.Interfaces.Persistence.Dishes;
-using Elkadeem.TicketManagement.Application.Interfaces.Persistence.Shared;
 using Elkadeem.TicketManagement.Application.Interfaces.Persistence.Tickets;
 using Elkadeem.TicketManagement.Persistence.DbContexts.Courses;
 using Elkadeem.TicketManagement.Persistence.DbContexts.Dishes;
 using Elkadeem.TicketManagement.Persistence.DbContexts.Tickets;
+using Elkadeem.TicketManagement.Persistence.Repository.Courses;
 using Elkadeem.TicketManagement.Persistence.Repository.Dishes;
 using Elkadeem.TicketManagement.Persistence.Repository.Tickets;
-using Elkadeem.TicketManagement.Persistence.UnitOfWork;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Elkadeem.TicketManagement.Persistence.Extensions
@@ -20,7 +19,7 @@ namespace Elkadeem.TicketManagement.Persistence.Extensions
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<IEventRepository, EventRepository>();
             services.AddScoped<IOrderRepository, OrderRepository>();
-            services.AddScoped<IUnitOfWork, EfUnitOfWork>();
+            //services.AddScoped<IUnitOfWork, EfUnitOfWork>();
 
 
 
@@ -32,6 +31,7 @@ namespace Elkadeem.TicketManagement.Persistence.Extensions
             // Courses db context
             services.AddScoped<ICourseLibraryDbContext, CourseLibraryDbContext>();
             services.AddScoped<ICourseRepository, CourseRepository>();
+            services.AddScoped<IAuthorRepository, AuthorRepository>();
 
             return services;
         }

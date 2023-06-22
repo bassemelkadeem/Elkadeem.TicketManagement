@@ -6,7 +6,7 @@ namespace Elkadeem.TicketManagement.Persistence.Repository
 {
     public class BaseRepository<T> : IRepository<T> where T : class
     {
-        protected readonly IBaseDbContext _dbContext;
+        private readonly IBaseDbContext _dbContext;
 
         public BaseRepository(IBaseDbContext databaseContext)
         {

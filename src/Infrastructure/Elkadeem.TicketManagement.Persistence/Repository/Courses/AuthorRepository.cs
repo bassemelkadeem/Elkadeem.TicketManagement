@@ -6,8 +6,12 @@ namespace Elkadeem.TicketManagement.Persistence.Repository.Courses
 {
     public class AuthorRepository : BaseRepository<Author>, IAuthorRepository
     {
-        public AuthorRepository(IBaseDbContext databaseContext) : base(databaseContext)
+        private readonly IBaseDbContext _dbContext;
+
+        public AuthorRepository(IBaseDbContext dbContext)
+            : base(dbContext)
         {
+            _dbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
         }
     }
 }

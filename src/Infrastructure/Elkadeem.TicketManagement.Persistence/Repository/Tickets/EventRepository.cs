@@ -7,13 +7,12 @@ namespace Elkadeem.TicketManagement.Persistence.Repository.Tickets
 {
     public class EventRepository : BaseRepository<Event>, IEventRepository
     {
-        public EventRepository(ITicketDbContext databaseContext)
-            : base(databaseContext)
+        private readonly ITicketDbContext _dbContext;
+
+        public EventRepository(ITicketDbContext dbContext)
+            : base(dbContext)
         {
-            if (databaseContext is null)
-            {
-                throw new ArgumentNullException(nameof(databaseContext));
-            }
+            _dbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
         }
 
         public async Task<bool> IsEventNameAndDateUniqueAsync(string name, DateTime date)
