@@ -1,6 +1,7 @@
 ﻿using Elkadeem.TicketManagement.Application.Interfaces.Persistence.Courses;
 using Elkadeem.TicketManagement.Application.Interfaces.Persistence.Dishes;
 using Elkadeem.TicketManagement.Application.Interfaces.Persistence.Tickets;
+using Elkadeem.TicketManagement.Persistence.DbContexts;
 using Elkadeem.TicketManagement.Persistence.DbContexts.Courses;
 using Elkadeem.TicketManagement.Persistence.DbContexts.Dishes;
 using Elkadeem.TicketManagement.Persistence.DbContexts.Tickets;
@@ -15,6 +16,9 @@ namespace Elkadeem.TicketManagement.Persistence.Extensions
     {
         public static IServiceCollection AddPersistenceServices(this IServiceCollection services)
         {
+            services.AddScoped<IBaseDbContext, BaseDbContext>();
+
+
             services.AddScoped<ITicketDbContext, TicketDbContext>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<IEventRepository, EventRepository>();
